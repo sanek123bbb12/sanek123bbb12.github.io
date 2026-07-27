@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Берген Александр</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#060606;
+font-family:'Montserrat',sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+
+background-image:
+radial-gradient(circle at top,#3b2a00 0%,#060606 60%);
+}
+
+.card{
+
+width:390px;
+max-width:100%;
+background:#111;
+border-radius:35px;
+padding:35px;
+border:2px solid #b58b1f;
+
+box-shadow:
+0 0 40px rgba(255,190,0,.25);
+
+text-align:center;
+
+animation:fade 1.2s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.logo{
+
+width:95px;
+height:95px;
+
+margin:auto;
+
+border-radius:50%;
+
+border:2px solid gold;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:38px;
+
+font-family:'Cinzel',serif;
+
+color:gold;
+
+box-shadow:0 0 20px gold;
+
+margin-bottom:20px;
+
+}
+
+h1{
+
+font-size:24px;
+
+color:#fff;
+
+font-family:'Cinzel',serif;
+
+}
+
+.subtitle{
+
+color:#d2b15d;
+
+margin-top:8px;
+
+margin-bottom:30px;
+
+letter-spacing:2px;
+
+}
+
+.btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+width:100%;
+
+padding:16px;
+
+margin-top:14px;
+
+border-radius:18px;
+
+background:#191919;
+
+border:1px solid #d4af37;
+
+color:white;
+
+font-size:17px;
+
+text-decoration:none;
+
+transition:.35s;
+
+}
+
+.btn:hover{
+
+background:#d4af37;
+
+color:black;
+
+transform:scale(1.03);
+
+}
+
+.footer{
+
+margin-top:28px;
+
+color:#9d9d9d;
+
+font-size:13px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">
+БА
+</div>
+
+<h1>
+Берген Александр
+</h1>
+
+<div class="subtitle">
+Приятно познакомиться
+  </div>
+  <a class="btn" href="tel:+77714371241">
+📞 Позвонить
+</a>
+
+<a class="btn" href="https://wa.me/77714371241">
+💬 WhatsApp
+</a>
+
+<a class="btn" href="tel:+77754584364">
+📱 Дополнительный номер
+</a>
+
+<a class="btn" href="https://wa.me/77754584364">
+💬 WhatsApp (2)
+</a>
+
+<a class="btn" href="https://instagram.com/_b.a.e_01" target="_blank">
+📷 Instagram
+</a>
+
+<a class="btn" onclick="copyKaspi()">
+❤️ Kaspi
+</a>
+
+<a class="btn" onclick="saveContact()">
+👤 Сохранить контакт
+</a>
+
+<div class="footer">
+Сканируй QR • Сохраняй контакт • Будем на связи
+</div>
+</div>
+
+<script>
+
+function copyKaspi(){
+
+navigator.clipboard.writeText("+77714371241");
+
+alert("Номер Kaspi скопирован:\n+7 771 437 1241");
+
+}
+
+function saveContact(){
+
+const vcard=`BEGIN:VCARD
+VERSION:3.0
+FN:Берген Александр Евгеньевич
+TEL;TYPE=CELL:+77714371241
+TEL;TYPE=WORK:+77754584364
+URL:https://instagram.com/_b.a.e_01
+END:VCARD`;
+
+const blob=new Blob([vcard],{type:'text/vcard'});
+
+const a=document.createElement("a");
+
+a.href=URL.createObjectURL(blob);
+
+a.download="Берген_Александр.vcf";
+
+a.click();
+
+}
+
+</script>
+
+</body>
+</html>
